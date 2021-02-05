@@ -22,7 +22,7 @@ for key in favorite_numbers:
 
 # 6-10 Favorite Numbers
 favorite_numbers = {
-	'Noah': [7,17],
+	'Noah': [7,2],
 	'Euler': [2.71828, 'e'],
 	'Archimedes': [3.14, 'pi'],
 	'Moses': [10,613],
