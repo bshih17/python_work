@@ -5,3 +5,5 @@ def describe_city(city = 'athens', country = 'greece'):
 describe_city('sparta')
 describe_city('corinth')
 describe_city('cairo','egypt')
+
+print("Hi")
