@@ -7,6 +7,7 @@ describe_pet('hamster', 'harry')
 describe_pet('dog', 'willie')
 describe_pet(animal_type = 'hamster', pet_name = 'harry')
 
+
 def describe_pet(pet_name, animal_type = 'dog'):
 	"""Display information about a pet."""
 	print(f"\nI have a {animal_type}.")
