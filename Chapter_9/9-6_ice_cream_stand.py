@@ -31,8 +31,11 @@ class IceCreamStand(Restaurant):
         Then initialize attributes of the ice cream stand.
         """
 
-        # super().__init__() specifically calls the __init__() method from the parent class
-        # if you delete super(), restaurant_name will not be passed to parent.
+        # super().__init__() specifically calls the __init__() method from the parent class.
+        #
+        # If you delete super(), restaurant_name will not be passed to parent,
+        # so if you use describe_restaurant(), it won't work
+        #
         # super().__init__() calls the parent __init__() method, which initializes a restaurant.
         super().__init__(restaurant_name, cuisine_type)
         self.flavors = []
