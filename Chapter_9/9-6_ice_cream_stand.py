@@ -30,6 +30,10 @@ class IceCreamStand(Restaurant):
         Initialize the child class with attributes of the parent class.
         Then initialize attributes of the ice cream stand.
         """
+
+        # super().__init__() specifically calls the __init__() method from the parent class
+        # if you delete super(), restaurant_name will not be passed to parent.
+        # super().__init__() calls the parent __init__() method, which initializes a restaurant.
         super().__init__(restaurant_name, cuisine_type)
         self.flavors = []
 
@@ -43,4 +47,5 @@ ice_cream_stand = IceCreamStand('Your Local Ice Cream Stand')
 ice_cream_stand.flavors = ['chocolate', 'vanilla', 'pistachio']
 
 ice_cream_stand.describe_restaurant()
+ice_cream_stand.open_restaurant()
 ice_cream_stand.display_flavors()
