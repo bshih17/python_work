@@ -57,7 +57,7 @@ class Battery:
 		if self.battery_size != 100:
 			self.battery_size = 100
 		else:
-			print("You're battery size is already maxed!")
+			print("Your battery size is already maxed!")
 
 
 class ElectricCar(Car):
@@ -85,3 +85,5 @@ my_tesla.battery.upgrade_battery()
 
 my_tesla.battery.describe_battery()
 my_tesla.battery.get_range()
+
+my_tesla.battery.upgrade_battery()
