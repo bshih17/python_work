@@ -25,11 +25,14 @@ class User:
         self.login_attempts = 0
 
 class Privileges():
-
+"""A separate class just for admin privileges"""
+    
     def __init__(self):
+        """Initialize Privileges class and define privileges attribute."""
         self.privileges = ['can add post', 'can delete post', 'can ban user', 'can lock thread',]
 
     def show_privileges(self):
+        """This is a method to show privileges in list form."""
         print(self.privileges)
 
 
