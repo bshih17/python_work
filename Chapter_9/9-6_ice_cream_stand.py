@@ -33,8 +33,9 @@ class IceCreamStand(Restaurant):
 
         # super().__init__() specifically calls the __init__() method from the parent class.
         #
+        # In parent, restaurant_name is assigned to self.restaurant_name.
         # If you delete super(), restaurant_name will not be passed to parent,
-        # so if you use describe_restaurant(), it won't work
+        # so if you use describe_restaurant(), it won't work.
         #
         # super().__init__() calls the parent __init__() method, which initializes a restaurant.
         super().__init__(restaurant_name, cuisine_type)
