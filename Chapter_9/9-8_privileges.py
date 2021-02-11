@@ -24,6 +24,7 @@ class User:
     def reset_login_attempts(self):
         self.login_attempts = 0
 
+
 class Privileges():
 """A separate class just for admin privileges"""
     
@@ -34,7 +35,6 @@ class Privileges():
     def show_privileges(self):
         """This is a method to show privileges in list form."""
         print(self.privileges)
-
 
 
 class Admin(User):
@@ -48,7 +48,6 @@ class Admin(User):
 
         super().__init__(first_name, last_name, username, age)
         self.privileges = Privileges()
-
 
 
 special_user = Admin('John', 'Doe', 'Admin000', 10)

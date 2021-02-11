@@ -23,9 +23,11 @@ class Restaurant:
     def increment_number_served(self, number_served):
         self.number_served += number_served
 
+
 restaurant = Restaurant('Chow Time Buffet', 'Chinese')
 restaurant.describe_restaurant()
 restaurant.open_restaurant()
+
 
 # 9-2 Three Restaurants
 restaurant_1 = Restaurant('Las Vegas Cuban Cuisine', 'Cuban')
@@ -36,6 +38,7 @@ restaurant_2.describe_restaurant()
 
 restaurant_3 = Restaurant('Chipotle', 'Mexican')
 restaurant_3.describe_restaurant()
+
 
 # 9-4 Number Served
 restaurant = Restaurant("Chick-Fil-A", "American")

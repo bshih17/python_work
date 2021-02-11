@@ -22,6 +22,7 @@ class Restaurant:
     def increment_number_served(self, number_served):
         self.number_served += number_served
 
+
 class IceCreamStand(Restaurant):
     """Represent aspects of a restaurant, specific to an ice cream stand."""
 
@@ -46,6 +47,7 @@ class IceCreamStand(Restaurant):
         print("Flavors we currently have:")
         for flavor in self.flavors:
             print(f"- {flavor.title()}")
+
 
 ice_cream_stand = IceCreamStand('Your Local Ice Cream Stand')
 ice_cream_stand.flavors = ['chocolate', 'vanilla', 'pistachio']
