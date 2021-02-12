@@ -13,6 +13,10 @@ class Die:
 		self.roll = randint(1, self.sides)
 		
 
+
+
+
+
 # 6-sided die
 # How do I save the number for every roll?
 die6 = Die()
