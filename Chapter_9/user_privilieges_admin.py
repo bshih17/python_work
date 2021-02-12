@@ -24,17 +24,6 @@ class User:
     def reset_login_attempts(self):
         self.login_attempts = 0
 
-class Privileges():
-    """A separate class just for admin privileges"""
-    
-    def __init__(self, privileges=[]):
-        """Initialize Privileges class and define privileges attribute."""
-        self.privileges = privileges
-
-    def show_privileges(self):
-        """This is a method to show privileges in list form."""
-        print(self.privileges)
-
 
 class Privileges():
     """A separate class just for admin privileges"""
@@ -45,30 +34,18 @@ class Privileges():
 
     def show_privileges(self):
         """This is a method to show privileges in list form."""
-        print(self.privileges)
+        print(f"Privileges:")
+        for privileges in self.privileges:
+            print(f"- {privileges}")
 
 
 class Admin(User):
     """This is the admin, which is a special user."""
     
-    def __init__(self, first_name, last_name, username, age, admin_privileges):
+    def __init__(self, first_name, last_name, username, age, privileges):
         """
         Initialize the admin with his first name, last name, and username.
         Also initialize with privileges.
         """
         super().__init__(first_name, last_name, username, age)
-        self.privileges = Privileges(admin_privileges)
-
-
-# When an Admin instance is created, it has an attribute of privileges, which is an instance.
-# This means that I need to assign an attribute to the Privileges instance.
-admin_privileges = ['can add post', 'can delete post', 'can ban user', 'can lock thread',]
-
-special_user = Admin('John', 'Doe', 'Admin000', 10, admin_privileges)
-
-special_user.describe_user()
-special_user.greet_user()
-
-# self.privileges is an instance of Privileges, so it has access to every method in Privileges.
-# special_user.privileges is an instance of Privileges, so it has access to show_privileges().
-special_user.privileges.show_privileges()
+        self.privileges = Privileges(privileges)
