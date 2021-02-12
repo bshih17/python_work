@@ -11,10 +11,6 @@ class Die:
 	def roll_die(self):
 		"""Roll the die."""
 		self.roll = randint(1, self.sides)
-		
-
-
-
 
 
 # 6-sided die
