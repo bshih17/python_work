@@ -1,0 +1,9 @@
+In Python, you can create programs.
+In Python, there are different data types like strings, integers, floats, and Boolean.
+In Python, you can use variables to store objects.
+In Python, you can use lists, tuples, dictionaries to store information.
+In Python, you can use if statements, if-elif statements, and if-else statements.
+In Python, you can use for loops to go through the elements of a list, tuple, or dictionary.
+In Python, you can use while loops with user input.
+In Python, you can make functions to accomplish a specific task.
+In Python, you can make classes and make instances out of them.
