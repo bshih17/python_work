@@ -1,5 +1,8 @@
 filename = 'guest_book.txt'
 
+with open(filename, 'w') as file_object:
+	file_object.write(f"List of Guests\n")
+
 iteration = 0
 
 while True:
