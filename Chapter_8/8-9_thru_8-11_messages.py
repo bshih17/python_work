@@ -36,6 +36,6 @@ text_messages = ['Please pick up your phone.',
 sent_text_messages = []
 
 print("\n8-11 Archived Messages:")
-send_messages(text_messages[:], sent_text_messages)
+send_messages(text_messages[:2], sent_text_messages)
 print(text_messages)
 print(sent_text_messages)
