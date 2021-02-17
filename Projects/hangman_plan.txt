@@ -1,0 +1,27 @@
+Randomly choose a word from word bank.
+- cheese
+
+Split up the word and store the letters in a list to reference letter.
+{'c', 'h', 'e', 'e', 's', 'e'}
+
+Create a 6-element list for slots/blanks.
+{'', '', '', '', '', ''}
+
+Display theses slots for the player.
+_ _ _ _ _ _
+
+
+
+@@@@@ Gameplay @@@@@
+
+You have 10 tries left. Guess a letter: e
+
+***Make sure the input is valid, a single letter string.
+
+Check to see if 'e' is in the word and, if so, how many times.
+- position 2,3,5
+
+Replace '' in positions 2,3,5 with 'e'.
+
+Display this for the player.
+_ _ e e _ e
