@@ -59,7 +59,7 @@ for i in range(0,len(word_bank)):
 while True:
 	slots = []
 	displayed_slots = ''
-	tries = 15
+	tries_left = 15
 	guessed_letters = []
 	
 	print("Welcome to Hangman.")
@@ -67,12 +67,13 @@ while True:
 	current_word = choice(word_bank).upper()
 	empty_slots_left = len(current_word)
 
+	# Create empty letter slots according to the current word.
 	for i in range(0, len(current_word)):
 		slots.append('')
 		displayed_slots += '_  '
 	
 	while True:
-		if tries == 0:
+		if tries_left == 0:
 			print("\nGAME OVER    GAME OVER    GAME OVER")
 			print("YOU LOSE")
 			print(f"The word was {current_word}.")
@@ -81,16 +82,19 @@ while True:
 		print("_______________________________________________________________________________________")
 		print(f"\n\t{displayed_slots}\n")
 
+		# Display letters you have already guessed.
 		if guessed_letters:
 			print(f"Letters you have already guessed: {guessed_letters}")
 
-		if tries == 1:
-			guess = input(f"You currently have {tries} try left. Guess a letter: ")
+		# Display how many tries you have left, and prompts you to guess a letter.
+		if tries_left == 1:
+			guess = input(f"You currently have {tries_left} try left. Guess a letter: ")
 		else:
-			guess = input(f"You currently have {tries} tries left. Guess a letter: ")
+			guess = input(f"You currently have {tries_left} tries left. Guess a letter: ")
 
 		guess = guess.upper()
 
+		# Check if the guess is a valid input, a single letter in the alphabet.
 		valid_input = check_if_a_in_b(guess, alphabet)
 
 		if valid_input:
@@ -98,7 +102,7 @@ while True:
 			positions = get_positions(guess, current_word)
 			
 			# If the guessed letter is in the word
-			# If the guessed letter has a position in the word
+			# aka if the guessed letter has a position in the word
 			if positions:
 				guessed_already = check_if_a_in_b(guess, slots)
 				
@@ -113,31 +117,37 @@ while True:
 						slots[position] = guess
 					empty_slots_left -= len(positions)
 
+					# Display how many times the guessed letter appears in the word.
 					if len(positions) == 1:
 						print(f"Nice! '{guess}' appears {len(positions)} time.")
 					else:
 						print(f"Nice! '{guess}' appears {len(positions)} times.")
 					
+				# Append the guessed letter to the list of the guessed letters.
 				guessed_letters.append(guess)
 
+				# Recreate displayed slots to be displayed when the while loop begins again.
 				displayed_slots = ''
-
 				for i in range(0, len(slots)):
 					if slots[i] == '':
 						displayed_slots += '_  '
 					else:
 						displayed_slots += f'{slots[i]}  '
-					
+				
+				# If you have guessed all the letters, the you win.
+				# aka all the empty slots are filled
 				if empty_slots_left == 0:
 					print("\nCongratulations! You win!")
 					break
 
+			# If the guessed letter is not in the word
 			else:
-				tries -= 1
+				tries_left -= 1
 				print(f"Sorry, '{guess}' is not in the word!")
 				guessed_letters.append(guess)
 				continue
 
+		# If the input is not valid, if it is not a single letter in the alphabet
 		else:
 			print("That's not a valid guess!")
 			continue
