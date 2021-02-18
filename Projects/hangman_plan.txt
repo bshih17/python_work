@@ -12,7 +12,9 @@ _ _ _ _ _ _
 
 
 
-@@@@@ Gameplay @@@@@
+@@@@@ Gameplay (in the while loop) @@@@@
+
+@@@ Case: @@@
 
 You have 10 tries left. Guess a letter: e
 
@@ -22,6 +24,8 @@ Check to see if 'e' is in the word and, if so, how many times.
 - position 2,3,5
 
 Replace '' in positions 2,3,5 with 'e'.
+
+Yes, 'e' appears 3 times in the word!
 
 Display this for the player.
 _ _ e e _ e
