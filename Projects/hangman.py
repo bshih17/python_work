@@ -65,7 +65,6 @@ while True:
 	print("Welcome to Hangman.")
 
 	current_word = choice(word_bank).upper()
-	current_letters = split_word(current_word)
 	empty_slots_left = len(current_word)
 
 	for i in range(0, len(current_word)):
