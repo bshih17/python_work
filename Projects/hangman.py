@@ -45,8 +45,6 @@ alphabet = [
 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
 ]
 
-word_bank = ['cheese', 'muffin', 'iguana', 'dictionary', 'scissors', 'jello']
-
 filename = 'hard_hangman_words.txt'
 
 # Create a word bank from file, though it has whitespaces.
