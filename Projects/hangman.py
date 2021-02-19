@@ -62,6 +62,9 @@ while True:
 
 	elif difficulty == 'hard':
 		filename = 'hard_hangman_words.txt'
+	else:
+		print("That's not a valid input!\n")
+		continue
 
 	# Create a word bank from file, though it has whitespaces.
 	with open(filename) as f:
