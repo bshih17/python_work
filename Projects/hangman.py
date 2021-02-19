@@ -45,24 +45,32 @@ alphabet = [
 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
 ]
 
-filename = 'hard_hangman_words.txt'
-
-# Create a word bank from file, though it has whitespaces.
-with open(filename) as f:
-	word_bank = f.readlines()
-
-# Recreate word bank without whitespaces.
-for i in range(0,len(word_bank)):
-	word_bank[i] = word_bank[i].strip()
 
 # Initiate Hangman game.
 while True:
 	slots = []
 	displayed_slots = ''
-	tries_left = 15
+	tries_left = 10
 	guessed_letters = []
 	
 	print("Welcome to Hangman.")
+
+	difficulty = input(f"Choose a difficulty. Enter 'easy' or 'hard': ")
+
+	if difficulty == 'easy':
+		filename = 'hangman_words.txt'
+
+	elif difficulty == 'hard':
+		filename = 'hard_hangman_words.txt'
+
+	# Create a word bank from file, though it has whitespaces.
+	with open(filename) as f:
+		word_bank = f.readlines()
+
+	# Recreate word bank without whitespaces.
+	for i in range(0,len(word_bank)):
+		word_bank[i] = word_bank[i].strip()
+
 
 	current_word = choice(word_bank).upper()
 	empty_slots_left = len(current_word)
@@ -104,6 +112,8 @@ while True:
 			# If the guessed letter is in the word
 			# aka if the guessed letter has a position in the word
 			if positions:
+
+				# Check if guessed already
 				guessed_already = check_if_a_in_b(guess, slots)
 				
 				# If the letter was guessed already
@@ -111,17 +121,16 @@ while True:
 					print(f"You guessed '{guess}' already!")
 					continue
 
-				else:
-					# For every position, assign the guessed letter to its slot
-					for position in positions:
-						slots[position] = guess
-					empty_slots_left -= len(positions)
+				# For every position, assign the guessed letter to its slot
+				for position in positions:
+					slots[position] = guess
+				empty_slots_left -= len(positions)
 
-					# Display how many times the guessed letter appears in the word.
-					if len(positions) == 1:
-						print(f"Nice! '{guess}' appears {len(positions)} time.")
-					else:
-						print(f"Nice! '{guess}' appears {len(positions)} times.")
+				# Display how many times the guessed letter appears in the word.
+				if len(positions) == 1:
+					print(f"Nice! '{guess}' appears {len(positions)} time.")
+				else:
+					print(f"Nice! '{guess}' appears {len(positions)} times.")
 					
 				# Append the guessed letter to the list of the guessed letters.
 				guessed_letters.append(guess)
@@ -138,14 +147,17 @@ while True:
 				# aka all the empty slots are filled
 				if empty_slots_left == 0:
 					print("\nCongratulations! You win!")
+					print(f"\n\t{displayed_slots}\n")
 					break
-
+			
+				
 			# If the guessed letter is not in the word
 			else:
 				tries_left -= 1
 				print(f"Sorry, '{guess}' is not in the word!")
 				guessed_letters.append(guess)
 				continue
+				
 
 		# If the input is not valid, if it is not a single letter in the alphabet
 		else:
@@ -153,7 +165,7 @@ while True:
 			continue
 	
 
-	play_again = input("\nDo you want to play again? (yes/no) ")
+	play_again = input("\nDo you want to play again? Enter 'yes' or 'no': ")
 	if play_again == 'no':
 		break
 	if play_again == 'yes':
@@ -162,3 +174,5 @@ while True:
 
 
 print("\nThanks for playing.")
+
+# How come it reduces the tries if you guessed already?
