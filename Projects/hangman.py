@@ -1,6 +1,21 @@
 from random import choice
 
 
+def create_word_bank(filename):
+	"""Create a word bank from a text file of words."""
+
+	# Create a word bank from file, though it has whitespaces.
+	with open(filename) as f:
+		word_bank = f.readlines()
+
+	# Recreate word bank without whitespaces.
+	# Replace each word with stripped word.
+	for i in range(0,len(word_bank)):
+		word_bank[i] = word_bank[i].strip()
+
+	return word_bank
+
+
 def split_word(word):
     """Splits word into letters and stores them in a list"""
     letters_of_word = []
@@ -40,6 +55,20 @@ def get_positions(guess, word):
 
 
 
+def update_displayed_slots(slots, displayed_slots):
+	"""Take from the current slots, and update displayed slots."""
+	displayed_slots = ''
+
+	for i in range(0, len(slots)):
+		if slots[i]:
+			displayed_slots += f'{slots[i]}  '
+		else:
+			displayed_slots += '_  '
+	
+	return displayed_slots
+
+
+
 alphabet = [
 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
@@ -66,14 +95,7 @@ while True:
 		print("That's not a valid input!\n")
 		continue
 
-	# Create a word bank from file, though it has whitespaces.
-	with open(filename) as f:
-		word_bank = f.readlines()
-
-	# Recreate word bank without whitespaces.
-	for i in range(0,len(word_bank)):
-		word_bank[i] = word_bank[i].strip()
-
+	word_bank = create_word_bank(filename)
 
 	current_word = choice(word_bank).upper()
 	empty_slots_left = len(current_word)
@@ -138,13 +160,8 @@ while True:
 				# Append the guessed letter to the list of the guessed letters.
 				guessed_letters.append(guess)
 
-				# Recreate displayed slots to be displayed when the while loop begins again.
-				displayed_slots = ''
-				for i in range(0, len(slots)):
-					if slots[i] == '':
-						displayed_slots += '_  '
-					else:
-						displayed_slots += f'{slots[i]}  '
+				# Update displayed slots to be displayed when the while loop begins again.
+				displayed_slots = update_displayed_slots(slots, displayed_slots)
 				
 				# If you have guessed all the letters, the you win.
 				# aka all the empty slots are filled
