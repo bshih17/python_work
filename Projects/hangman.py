@@ -55,7 +55,7 @@ def get_positions(guess, word):
 
 
 
-def update_displayed_slots(slots, displayed_slots):
+def get_updated_displayed_slots(slots, displayed_slots):
 	"""Take from the current slots, and update displayed slots."""
 	displayed_slots = ''
 
@@ -161,7 +161,7 @@ while True:
 				guessed_letters.append(guess)
 
 				# Update displayed slots to be displayed when the while loop begins again.
-				displayed_slots = update_displayed_slots(slots, displayed_slots)
+				displayed_slots = get_updated_displayed_slots(slots, displayed_slots)
 				
 				# If you have guessed all the letters, the you win.
 				# aka all the empty slots are filled
