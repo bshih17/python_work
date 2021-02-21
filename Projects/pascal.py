@@ -1,4 +1,4 @@
-"""Generate Pascal's triangle."""
+# Generate Pascal's triangle.
 
 def get_median(string):
 	"""Gets the median character in a string"""
@@ -128,9 +128,6 @@ while True:
 			
 			for number in pascal[current_row]:
 				displayed_numbers += f"{number} "
-
-#			print(f"Length of last row: {len(pascal[total_rows])}")
-#			print(f"Length of current row: {len(pascal[current_row])}")
 
 			half_length_displayed_numbers = int(len(displayed_numbers)/2)
 
