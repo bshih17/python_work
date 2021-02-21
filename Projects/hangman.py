@@ -28,7 +28,7 @@ def split_word(word):
 def check_if_a_in_b(guess, alphabet):
 	"""
 	Checks to see if the guess is a valid input, a single letter string
-	Check to see if the guess is in the alphabet.	
+	Check to see if the guess is in the alphabet string.	
 	Check to see if the guess is in the slots.
 	"""
 	boolean = False
@@ -55,6 +55,9 @@ def get_positions(guess, word):
 
 
 
+# I want this to work as a method, but I'm not sure how because I need to change displayed_slots.
+# You can make a function work as a method to do something like print,
+# but can you make a function work as a method to update a variable?
 def get_updated_displayed_slots(slots, displayed_slots):
 	"""Take from the current slots, and update displayed slots."""
 	displayed_slots = ''
