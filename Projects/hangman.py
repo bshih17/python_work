@@ -93,7 +93,7 @@ while True:
 		filename = 'hangman_words.txt'
 
 	elif difficulty == 'hard':
-		filename = 'hard_hangman_words.txt'
+		filename = 'hangman_hard_words.txt'
 	else:
 		print("That's not a valid input!\n")
 		continue
