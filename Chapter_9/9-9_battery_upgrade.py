@@ -53,7 +53,7 @@ class Battery:
 		print(f"This car can go about {range} miles on a full charge.")
 
 	def upgrade_battery(self):
-		"""This will upgrade the battery if its capactiy is not at 100."""
+		"""This will upgrade the battery if its capacity is not at 100."""
 		if self.battery_size != 100:
 			self.battery_size = 100
 		else:
