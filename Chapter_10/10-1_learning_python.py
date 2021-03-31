@@ -1,4 +1,4 @@
-filename = 'learning_python.txt'
+filename = 'Chapter_10\learning_python.txt'
 
 # Read the entire file and print.
 # read() makes a long string.

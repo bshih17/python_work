@@ -9,7 +9,7 @@ while True:
 	try:
 		first_number = int(first_number)
 	except:
-		print("That is not a number!")
+		print("That is not a whole number!")
 		continue
 
 	second_number = input("Enter the second number: ")
@@ -19,7 +19,7 @@ while True:
 	try:
 		second_number = int(second_number)
 	except:
-		print("That is not a number!")
+		print("That is not a whole number!")
 		continue
 	else:
 		print(first_number + second_number)
