@@ -42,6 +42,9 @@ def makeMove(board, letter, move):
 
 
 
+
+
+
 # Game setup
 board = [ '',
 ' ', ' ', ' ',
