@@ -15,6 +15,7 @@ country = country.lower() + ' '
 
 # position 0 is t, position 28 is space
 print(f"Country: {country}; Length of country: {len(country)}; characters go from 0 to {len(country)-1}")
+
 for i in range(0,len(country)):
 	if country[i] == ' ':
 		# slices starts at x+1 (letter after space), stops before i (space), thus ending with i-1
